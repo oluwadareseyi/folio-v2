@@ -1,0 +1,94 @@
+.c-button {
+  display: inline-block;
+  background: transparent;
+  color: $col-gray;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  border: 2px solid $col-boulder;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: $col-orange;
+    color: $col-black;
+    background: $col-orange;
+  }
+
+  .c-link {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+
+    &__inner {
+      display: flex;
+      transform: translateY(0);
+      // transition: transform 0.3s ease-out;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      > span {
+        /* white-space: nowrap; */
+        margin-right: 2px;
+      }
+    }
+
+    &__animated {
+      /* white-space: nowrap; */
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  @include media(">tablet") {
+    &:hover {
+      .c-link__inner {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}
+
+.c-infinite {
+  .c-link {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+
+    &__inner {
+      display: flex;
+      transform: translateY(-100%);
+      animation: infiniteArrow 1.5s infinite
+        cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      > span {
+        /* white-space: nowrap; */
+        margin-right: 2px;
+      }
+    }
+
+    &__animated {
+      /* white-space: nowrap; */
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  // @include media(">tablet") {
+  //   &:hover {
+  //     .c-link__inner {
+  //       transform: translateY(-100%);
+  //     }
+  //   }
+  // }
+
+  @keyframes infiniteArrow {
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

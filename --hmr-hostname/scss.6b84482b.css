@@ -1,0 +1,401 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Open Sauce", sans-serif;
+  src: url("/opensauce-medium.44f5cd74.woff2") format("woff2"), url("/opensauce-medium.44f5cd74.woff2") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: calc(100vw / 1440 * 10);
+}
+@media (max-width: 425px) {
+  html {
+    font-size: calc(100vw / 425 * 10);
+  }
+}
+
+body {
+  font-family: "Open Sauce", sans-serif;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  background: #111111;
+  color: #aaaaaa;
+}
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+  display: none;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.home .hero__title .bottom__left, .home .hero__title__left, .home .hero__title__right, .home .hero__title__dash {
+  font-size: 32.8rem;
+  font-family: "Bebas Neue", cursive;
+}
+
+.home .hero__paragraph .first-word, .home__nav {
+  font-size: 12px;
+}
+
+.home .hero__title .bottom__right {
+  font-family: "Open Sauce", sans-serif;
+  font-size: 1.65rem;
+}
+
+.c-button {
+  display: inline-block;
+  background: transparent;
+  color: #aaaaaa;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  border: 2px solid #777777;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.c-button:hover {
+  border-color: #cb450c;
+  color: #111111;
+  background: #cb450c;
+}
+.c-button .c-link {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+}
+.c-button .c-link__inner {
+  display: flex;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.c-button .c-link__inner > span {
+  /* white-space: nowrap; */
+  margin-right: 2px;
+}
+.c-button .c-link__animated {
+  /* white-space: nowrap; */
+  position: absolute;
+  top: 100%;
+}
+@media (min-width: 769px) {
+  .c-button:hover .c-link__inner {
+    transform: translateY(-100%);
+  }
+}
+
+.c-infinite .c-link {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+}
+.c-infinite .c-link__inner {
+  display: flex;
+  transform: translateY(-100%);
+  animation: infiniteArrow 1.5s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.c-infinite .c-link__inner > span {
+  /* white-space: nowrap; */
+  margin-right: 2px;
+}
+.c-infinite .c-link__animated {
+  /* white-space: nowrap; */
+  position: absolute;
+  top: 100%;
+}
+@keyframes infiniteArrow {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.home {
+  padding: 24px 40px;
+  margin: 0 auto;
+  height: 200vh;
+}
+.home__nav {
+  margin-bottom: 6.4rem;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.4;
+}
+.home__nav__left, .home__nav__right {
+  display: flex;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+.home__nav__left {
+  max-width: 490px;
+  width: 100%;
+  margin-right: 50px;
+}
+.home__nav__right {
+  max-width: 325px;
+  width: 100%;
+}
+.home__nav .nav__folio, .home__nav .nav__availability {
+  color: #777777;
+}
+.home .hero__title {
+  line-height: 0.9;
+  color: #777777;
+}
+.home .hero__title .hero__hover {
+  transition: color 0.2s;
+}
+.home .hero__title .hero__hover:hover {
+  color: #aaaaaa;
+}
+.home .hero__title__left, .home .hero__title__right, .home .hero__title__dash {
+  display: inline-block;
+  letter-spacing: -0.105em;
+}
+.home .hero__title__dash {
+  transform: scaleX(1.1);
+}
+.home .hero__title__top {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+.home .hero__title__top, .home .hero__title__bottom {
+  width: 100%;
+}
+.home .hero__title__top__overflow, .home .hero__title__bottom__overflow {
+  display: inline-flex;
+  width: 100%;
+}
+.home .hero__title__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.home .hero__title .bottom__left {
+  letter-spacing: -0.105em;
+  flex-shrink: 0;
+}
+.home .hero__title .bottom__right {
+  position: relative;
+  z-index: 1;
+  max-width: 32.5rem;
+  width: 100%;
+  padding: 2rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.home .hero__paragraph {
+  color: #aaaaaa;
+  line-height: 1.3;
+}
+.home .hero__paragraph span {
+  color: #777777;
+  text-transform: uppercase;
+}
+.home .hero__scroll {
+  margin-top: auto;
+  color: #777777;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=/scss.6b84482b.css.map */
