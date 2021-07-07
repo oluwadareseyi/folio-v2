@@ -1,6 +1,28 @@
 .home__projects__project {
   color: $col-boulder;
 
+  .project__link {
+    @include media("<=phone") {
+    }
+    text-align: right;
+    padding-right: 5rem;
+    padding-bottom: 3.1rem;
+
+    @include media(">phone") {
+      display: none;
+    }
+
+    .c-button .c-link__inner > span {
+      margin-top: -4px;
+      display: block;
+    }
+
+    .share-icon {
+      position: relative;
+      top: 0.3rem;
+    }
+  }
+
   &__label {
     @extend %description-12;
     line-height: 1.3;
@@ -10,6 +32,7 @@
 
   &__label {
     margin-top: 3.2rem;
+    padding-right: 2.2rem;
 
     @include media(">tablet") {
       padding-right: 17.2rem;
@@ -24,6 +47,12 @@
   }
 
   &__link {
+    pointer-events: none;
+
+    @media (any-pointer: fine) {
+      pointer-events: auto;
+    }
+
     &.gradient {
       .title__main {
         background: $gradient;
@@ -44,6 +73,12 @@
 
     .title__main {
       position: relative;
+
+      @include media("<=phone") {
+        &.right {
+          text-align: right;
+        }
+      }
       .slide-up {
         position: absolute;
         display: none;
@@ -94,6 +129,12 @@
     text-transform: uppercase;
     padding-top: 6.4rem;
     padding-bottom: 4.5rem;
+
+    @include media("<=phone") {
+      padding-top: 3.2rem;
+      padding-bottom: 2.4rem;
+      line-height: 0.9;
+    }
     .inline-ovh {
       display: inline-flex;
       overflow: hidden;
