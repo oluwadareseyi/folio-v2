@@ -526,7 +526,7 @@ html.has-scroll-dragging {
   align-items: center;
   display: flex;
   position: relative;
-  animation: marquee 30s linear infinite;
+  animation: marquee 25s linear infinite;
   will-change: transform;
   padding-top: 5.8rem;
   padding-bottom: 2.3rem;
@@ -540,6 +540,7 @@ html.has-scroll-dragging {
   text-transform: uppercase;
   color: #777777;
   position: relative;
+  overflow: hidden;
 }
 .home__contact .marquee__inner .inner-span .slide-up {
   position: absolute;

@@ -11640,6 +11640,7 @@ var Home = /*#__PURE__*/function () {
 
     this.locomotive = scroll;
     this.heroTextAnimation();
+    this.homeAnimations();
     this.homeActions();
   }
 
@@ -11655,8 +11656,8 @@ var Home = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "homeIntroAnimation",
-    value: function homeIntroAnimation() {}
+    key: "homeAnimations",
+    value: function homeAnimations() {}
   }, {
     key: "heroTextAnimation",
     value: function heroTextAnimation() {

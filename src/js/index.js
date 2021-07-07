@@ -41,6 +41,7 @@ export default class Home {
   constructor(scroll) {
     this.locomotive = scroll;
     this.heroTextAnimation();
+    this.homeAnimations();
     this.homeActions();
   }
 
@@ -52,7 +53,7 @@ export default class Home {
     });
   }
 
-  homeIntroAnimation() {}
+  homeAnimations() {}
 
   heroTextAnimation() {
     gsap.to(".hero__title__dash", {
