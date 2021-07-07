@@ -447,14 +447,35 @@ html.has-scroll-dragging {
 }
 .home__projects__project__link.gradient .title__main {
   background: linear-gradient(90deg, rgba(233, 227, 198, 0.5) 0%, rgba(233, 198, 217, 0.5) 100%);
+  overflow: hidden;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background 0.3s;
 }
-.home__projects__project__link.gradient:hover .title__main {
-  background: #cb450c;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.home__projects__project__link .title__main {
+  position: relative;
+}
+.home__projects__project__link .title__main .slide-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 275ms ease;
+}
+.home__projects__project__link .title__main .slide-up::before {
+  display: inline-block;
+  content: attr(data-content);
+  white-space: nowrap;
+  color: #cb450c;
+  transform: translateY(-100%);
+  transition: transform 275ms ease;
+}
+.home__projects__project__link:hover .title__main .slide-up {
+  transform: translateY(0);
+}
+.home__projects__project__link:hover .title__main .slide-up::before {
+  transform: translateY(0);
 }
 .home__projects__project__title {
   line-height: 1;

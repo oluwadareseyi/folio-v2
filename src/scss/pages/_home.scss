@@ -180,16 +180,50 @@
     &.gradient {
       .title__main {
         background: $gradient;
+        overflow: hidden;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: background 0.3s;
       }
 
-      &:hover {
-        .title__main {
-          background: $col-orange;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+      // &:hover {
+      //   .title__main {
+      //     background: $col-orange;
+      //     -webkit-background-clip: text;
+      //     -webkit-text-fill-color: transparent;
+      //   }
+      // }
+    }
+
+    .title__main {
+      position: relative;
+      .slide-up {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transform: translateY(100%);
+        transition: transform 275ms ease;
+
+        &::before {
+          display: inline-block;
+          content: attr(data-content);
+          white-space: nowrap;
+          color: $col-orange;
+          transform: translateY(-100%);
+          transition: transform 275ms ease;
+        }
+      }
+    }
+
+    &:hover {
+      .title__main {
+        .slide-up {
+          transform: translateY(0);
+
+          &::before {
+            transform: translateY(0);
+          }
         }
       }
     }
