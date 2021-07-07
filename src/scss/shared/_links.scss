@@ -1,0 +1,10 @@
+%links {
+  a {
+    color: $col-boulder;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $col-orange;
+    }
+  }
+}

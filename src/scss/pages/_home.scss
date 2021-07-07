@@ -148,7 +148,7 @@
     }
   }
 
-  &__community {
+  &__content {
     padding: 24rem 0;
     text-align: center;
     display: flex;
@@ -165,12 +165,56 @@
 
     &__desc {
       @extend %description-32;
-      max-width: 950px;
+      max-width: 95rem;
       width: 100%;
+      @extend %links;
+    }
+  }
 
+  &__stack {
+    max-width: 1044px;
+    margin-left: auto;
+    padding-top: 16rem;
+    padding-bottom: 24rem;
+    @extend %description-16;
+
+    &__paragraph {
+      color: $col-gray;
+      max-width: 32.5rem;
+
+      span,
       a {
         color: $col-boulder;
+        text-transform: uppercase;
       }
+
+      @extend %links;
+
+      .first-word {
+        @extend %description-12;
+      }
+    }
+  }
+
+  &__awards {
+    &__top,
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+    h3 {
+      @extend %title-328;
+      color: $col-boulder;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+    }
+    @extend %links;
+
+    p {
+      align-self: flex-end;
+      @extend %description-32;
+      max-width: 55.5rem;
+      padding-bottom: 5.5rem;
     }
   }
 }
