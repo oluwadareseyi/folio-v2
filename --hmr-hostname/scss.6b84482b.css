@@ -278,7 +278,7 @@ html.has-scroll-dragging {
 }
 @media (max-width: 550px) {
   .home__contact__email .to-copy, .home__contact__desc, .home__stack, .home__hero .hero__title .bottom__right {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -668,7 +668,7 @@ html.has-scroll-dragging {
 }
 @media (max-width: 550px) {
   .home__hero .hero__title .bottom__right {
-    max-width: 35rem;
+    max-width: 27.5rem;
     margin-left: auto;
   }
 }
@@ -822,8 +822,10 @@ html.has-scroll-dragging {
     padding-bottom: 5.5rem;
   }
 }
-.home__contact {
-  padding-top: 16rem;
+@media (min-width: 769px) {
+  .home__contact {
+    padding-top: 16rem;
+  }
 }
 .home__contact__desc {
   margin: 0;
@@ -836,6 +838,11 @@ html.has-scroll-dragging {
     margin-left: auto;
     margin-right: auto;
     padding: 0;
+  }
+}
+@media (max-width: 550px) {
+  .home__contact__desc {
+    max-width: 28.5rem;
   }
 }
 .home__contact .marquee {

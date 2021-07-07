@@ -193,7 +193,7 @@
           }
 
           @include media("<=phone") {
-            max-width: 35rem;
+            max-width: 27.5rem;
             margin-left: auto;
           }
         }
@@ -386,7 +386,9 @@
   }
 
   &__contact {
-    padding-top: 16rem;
+    @include media(">tablet") {
+      padding-top: 16rem;
+    }
 
     &__desc {
       @extend %description-16;
@@ -399,6 +401,10 @@
         margin-left: auto;
         margin-right: auto;
         padding: 0;
+      }
+
+      @include media("<=phone") {
+        max-width: 28.5rem;
       }
     }
 
