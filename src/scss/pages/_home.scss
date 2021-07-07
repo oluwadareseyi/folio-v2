@@ -9,6 +9,11 @@
     @extend %description-12;
     line-height: 1.4;
 
+    .nav__button {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
     &__left,
     &__right {
       display: flex;
@@ -23,7 +28,7 @@
     }
 
     &__right {
-      max-width: 32.5rem;
+      max-width: 325px;
       width: 100%;
     }
 
@@ -212,7 +217,7 @@
       display: flex;
       justify-content: space-between;
     }
-    h3 {
+    .awards-title {
       @extend %title-328;
       color: $col-boulder;
       letter-spacing: -0.05em;

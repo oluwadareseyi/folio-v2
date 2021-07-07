@@ -231,7 +231,7 @@ html.has-scroll-dragging {
   cursor: grabbing;
 }
 
-.home__awards h3, .home__hero .hero__title .bottom__left, .home__hero .hero__title__left, .home__hero .hero__title__right, .home__hero .hero__title__dash {
+.home__awards .awards-title, .home__hero .hero__title .bottom__left, .home__hero .hero__title__left, .home__hero .hero__title__right, .home__hero .hero__title__dash {
   font-size: 32.8rem;
   font-family: "Bebas Neue", cursive;
 }
@@ -417,6 +417,10 @@ html.has-scroll-dragging {
   justify-content: space-between;
   line-height: 1.4;
 }
+.home__nav .nav__button {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
 .home__nav__left, .home__nav__right {
   display: flex;
   text-transform: uppercase;
@@ -428,7 +432,7 @@ html.has-scroll-dragging {
   margin-right: 5rem;
 }
 .home__nav__right {
-  max-width: 32.5rem;
+  max-width: 325px;
   width: 100%;
 }
 .home__nav .nav__folio, .home__nav .nav__availability {
@@ -558,7 +562,7 @@ html.has-scroll-dragging {
   display: flex;
   justify-content: space-between;
 }
-.home__awards h3 {
+.home__awards .awards-title {
   color: #777777;
   letter-spacing: -0.05em;
   line-height: 0.9;
