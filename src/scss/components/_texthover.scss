@@ -10,7 +10,10 @@
 
   &__label {
     margin-top: 3.2rem;
-    padding-right: 17.2rem;
+
+    @include media(">tablet") {
+      padding-right: 17.2rem;
+    }
 
     .label-1 {
       max-width: 84.3rem;
@@ -43,19 +46,27 @@
       position: relative;
       .slide-up {
         position: absolute;
+        display: none;
         top: 0;
         left: 0;
         overflow: hidden;
         transform: translateY(100%);
         transition: transform 275ms ease;
 
+        @media (any-pointer: fine) {
+          display: inline-block;
+        }
+
         &::before {
           display: inline-block;
           content: attr(data-content);
-          white-space: nowrap;
           color: $col-orange;
           transform: translateY(-100%);
           transition: transform 275ms ease;
+
+          @include media(">tablet") {
+            white-space: nowrap;
+          }
         }
       }
     }
@@ -76,7 +87,10 @@
   &__title {
     @extend %title-160;
     line-height: 1;
-    white-space: nowrap;
+
+    @include media(">tablet") {
+      white-space: nowrap;
+    }
     text-transform: uppercase;
     padding-top: 6.4rem;
     padding-bottom: 4.5rem;

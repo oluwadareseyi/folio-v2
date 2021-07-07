@@ -12,11 +12,33 @@ const scrollEl = document.querySelector("[data-scroll-container]");
 const scroll = new LocomotiveScroll({
   el: scrollEl,
   smooth: true,
+  lerp: 0.06,
+  tablet: {
+    breakpoint: 768,
+  },
 });
 
 setTimeout(() => {
   scroll.update();
 }, 1000);
+
+let device = "tablet";
+
+window.addEventListener("resize", () => {
+  const width = window.innerWidth;
+
+  if (width <= 768 && device !== "laptop") {
+    scroll.destroy();
+    scroll.init();
+    device = "laptop";
+  }
+
+  if (width > 768 && device === "laptop") {
+    scroll.destroy();
+    scroll.init();
+    device = "tablet";
+  }
+});
 
 scroll.on("scroll", ScrollTrigger.update);
 
@@ -56,7 +78,7 @@ export default class Home {
   homeAnimations() {}
 
   heroTextAnimation() {
-    gsap.to(".hero__title__dash", {
+    gsap.to(".hero__title__dash.desktop", {
       scrollTrigger: {
         trigger: ".hero__title",
         scroller: "[data-scroll-container]",

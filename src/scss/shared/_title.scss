@@ -2,10 +2,20 @@
   font-size: 32.8rem;
   // letter-spacing: -0.05em;
   font-family: $font-bebas;
+  word-break: break-word;
+
+  @include media("<=phone") {
+    font-size: 16rem;
+  }
 }
 
 %title-160 {
   font-size: 16rem;
   font-family: $font-bebas;
   letter-spacing: -0.025em;
+
+  @include media("<=phone") {
+    font-size: 8rem;
+    word-break: break-word;
+  }
 }

@@ -41,7 +41,7 @@
             >
           </div>
 
-          <div class="nav__folio">
+          <div class="nav__folio hide-mobile">
             <span>
               Frontend Developer <br />
               Folio / 2020 — 2021
@@ -50,11 +50,14 @@
         </div>
 
         <div class="home__nav__right">
+          <div class="nav__folio hide-desktop">
+            Frontend Developer <br />
+            Folio / 2020 — 2021
+          </div>
+
           <div class="nav__availability">
-            <span
-              >Available for freelance <br />
-              work from Aug 2021</span
-            >
+            Available for freelance <br />
+            work from Aug 2021
           </div>
 
           <button class="nav__button c-button contact-scroll">
@@ -69,8 +72,13 @@
       </nav>
 
       <section class="home__hero">
-        <h1 class="hero__title">
-          <span class="hero__title__top__overflow">
+        <div class="hero__title">
+          <h1 class="mobile">
+            FRONT <br />
+            —— END <br />
+            DEVELOPER
+          </h1>
+          <h1 class="hero__title__top__overflow desktop">
             <div class="hero__title__top">
               <span
                 class="hero__title__left"
@@ -85,7 +93,8 @@
                 <span class="hero__hover">N</span>
                 <span class="hero__hover">T</span>
               </span>
-              <span class="hero__title__dash">——</span>
+              <span class="hero__title__dash desktop">——</span>
+              <span class="hero__title__dash tablet">——</span>
 
               <span
                 class="hero__title__right"
@@ -99,10 +108,11 @@
                 <span class="hero__hover">D</span>
               </span>
             </div>
-          </span>
+          </h1>
+
           <span class="hero__title__bottom__overflow">
             <div class="hero__title__bottom">
-              <div class="bottom__left">
+              <h1 class="bottom__left desktop">
                 <span class="hero__hover">D</span>
                 <span class="hero__hover">E</span>
                 <span class="hero__hover">V</span>
@@ -112,7 +122,7 @@
                 <span class="hero__hover">P</span>
                 <span class="hero__hover">E</span>
                 <span class="hero__hover">R</span>
-              </div>
+              </h1>
               <div class="bottom__right">
                 <p class="hero__paragraph">
                   <span class="first-word">About</span> &nbsp; I am a developer
@@ -163,7 +173,7 @@
               </div>
             </div>
           </span>
-        </h1>
+        </div>
       </section>
 
       <section class="home__projects">
@@ -430,7 +440,11 @@
 
       <section class="home__awards">
         <div class="home__awards__top">
-          <h2 class="awards-title">Awards</h2>
+          <h2 class="awards-title mobile">
+            AWARDS X <br />
+            RECOGNITIOn
+          </h2>
+          <h2 class="awards-title desktop">Awards</h2>
           <p>
             Site of Day
             <a
@@ -447,8 +461,8 @@
           </p>
         </div>
         <div class="home__awards__bottom">
-          <h2 class="awards-title">X</h2>
-          <h2 class="awards-title">RECOGNITION</h2>
+          <h2 class="awards-title desktop">X</h2>
+          <h2 class="awards-title desktop">RECOGNITION</h2>
         </div>
       </section>
 
@@ -482,21 +496,21 @@
               <span aria-hidden="true" class="inner-span">
                 <span
                   class="slide-up"
-                  data-content="LET’S TALK — LET’S COLLABoRATE — SAY HELLO — WANT TO START
+                  data-content="LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
                 SOMETHING?"
                   aria-hidden="true"
                 ></span>
-                LET’S TALK — LET’S COLLABoRATE — SAY HELLO — WANT TO START
+                LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
                 SOMETHING?</span
               >
               <span class="inner-span">
                 <span
                   class="slide-up"
-                  data-content="LET’S TALK — LET’S COLLABoRATE — SAY HELLO — WANT TO START
+                  data-content="LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
                 SOMETHING?"
                   aria-hidden="true"
                 ></span>
-                LET’S TALK — LET’S COLLABoRATE — SAY HELLO — WANT TO START
+                LET’S TALK — LET’S COLLABORATE — SAY HELLO — WANNA BE STARTING
                 SOMETHING?</span
               >
             </div>
@@ -516,6 +530,53 @@
       </section>
 
       <footer class="home__footer" id="js-footer">
+        <div class="home__footer__center">
+          <div class="footer__links">
+            <div class="link__flex">
+              <div class="link__flex__inner">
+                <a href="/" class="nav__button c-button contact-scroll">
+                  <span class="c-link">
+                    <span class="c-link__inner">
+                      <span> Twitter </span>
+                      <span class="c-link__animated"> Twitter </span>
+                    </span>
+                  </span>
+                </a>
+
+                <a href="/" class="nav__button c-button contact-scroll">
+                  <span class="c-link">
+                    <span class="c-link__inner">
+                      <span> INSTAGRAM </span>
+                      <span class="c-link__animated"> INSTAGRAM </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="link__flex">
+              <div class="link__flex__inner second">
+                <a href="/" class="nav__button c-button contact-scroll">
+                  <span class="c-link">
+                    <span class="c-link__inner">
+                      <span> GITHUB </span>
+                      <span class="c-link__animated"> GITHUB </span>
+                    </span>
+                  </span>
+                </a>
+
+                <a href="/" class="nav__button c-button contact-scroll">
+                  <span class="c-link">
+                    <span class="c-link__inner">
+                      <span> LINKEDIN </span>
+                      <span class="c-link__animated"> LINKEDIN </span>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="home__footer__left">
           <p class="place">LAGOS NG</p>
           <div class="time">
@@ -526,45 +587,6 @@
               target="_blank"
               rel="nofollow"
             ></a>
-          </div>
-        </div>
-        <div class="home__footer__center">
-          <div class="footer__links">
-            <a href="/" class="nav__button c-button contact-scroll">
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span> Twitter </span>
-                  <span class="c-link__animated"> Twitter </span>
-                </span>
-              </span>
-            </a>
-
-            <a href="/" class="nav__button c-button contact-scroll">
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span> INSTAGRAM </span>
-                  <span class="c-link__animated"> INSTAGRAM </span>
-                </span>
-              </span>
-            </a>
-
-            <a href="/" class="nav__button c-button contact-scroll">
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span> GITHUB </span>
-                  <span class="c-link__animated"> GITHUB </span>
-                </span>
-              </span>
-            </a>
-
-            <a href="/" class="nav__button c-button contact-scroll">
-              <span class="c-link">
-                <span class="c-link__inner">
-                  <span> LINKEDIN </span>
-                  <span class="c-link__animated"> LINKEDIN </span>
-                </span>
-              </span>
-            </a>
           </div>
         </div>
         <p class="home__footer__right">

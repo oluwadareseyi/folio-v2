@@ -2,7 +2,11 @@ html {
   font-size: calc(100vw / 1440 * 10);
 
   @include media("<=phone") {
-    font-size: calc(100vw / 425 * 10);
+    font-size: calc(100vw / 550 * 10);
+  }
+
+  @include media("<=375px") {
+    font-size: calc(100vw / 375 * 10);
   }
 }
 

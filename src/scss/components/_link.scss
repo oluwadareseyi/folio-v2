@@ -11,9 +11,11 @@
   transition: all 0.3s;
 
   &:hover {
-    border-color: $col-orange;
-    color: $col-black;
-    background: $col-orange;
+    @media (any-pointer: fine) {
+      border-color: $col-orange;
+      color: $col-black;
+      background: $col-orange;
+    }
   }
 
   .c-link {
@@ -38,11 +40,16 @@
       /* white-space: nowrap; */
       position: absolute;
       top: 100%;
+      display: none;
+
+      @media (any-pointer: fine) {
+        display: inline-block;
+      }
     }
   }
 
-  @include media(">tablet") {
-    &:hover {
+  &:hover {
+    @media (any-pointer: fine) {
       .c-link__inner {
         transform: translateY(-100%);
       }

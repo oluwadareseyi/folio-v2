@@ -3,8 +3,10 @@
     color: $col-boulder;
     transition: color 0.3s;
 
-    &:hover {
-      color: $col-orange;
+    @media (any-pointer: fine) {
+      &:hover {
+        color: $col-orange;
+      }
     }
   }
 }

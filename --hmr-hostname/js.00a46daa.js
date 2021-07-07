@@ -11613,11 +11613,31 @@ _gsap.default.registerPlugin(_ScrollTrigger.ScrollTrigger);
 var scrollEl = document.querySelector("[data-scroll-container]");
 var scroll = new _locomotiveScroll.default({
   el: scrollEl,
-  smooth: true
+  smooth: true,
+  lerp: 0.06,
+  tablet: {
+    breakpoint: 768
+  }
 });
 setTimeout(function () {
   scroll.update();
 }, 1000);
+var device = "tablet";
+window.addEventListener("resize", function () {
+  var width = window.innerWidth;
+
+  if (width <= 768 && device !== "laptop") {
+    scroll.destroy();
+    scroll.init();
+    device = "laptop";
+  }
+
+  if (width > 768 && device === "laptop") {
+    scroll.destroy();
+    scroll.init();
+    device = "tablet";
+  }
+});
 scroll.on("scroll", _ScrollTrigger.ScrollTrigger.update);
 
 _ScrollTrigger.ScrollTrigger.scrollerProxy(scroll.el, {
@@ -11661,7 +11681,7 @@ var Home = /*#__PURE__*/function () {
   }, {
     key: "heroTextAnimation",
     value: function heroTextAnimation() {
-      _gsap.default.to(".hero__title__dash", {
+      _gsap.default.to(".hero__title__dash.desktop", {
         scrollTrigger: {
           trigger: ".hero__title",
           scroller: "[data-scroll-container]",
