@@ -1,5 +1,5 @@
 .home {
-  padding: 24px 40px;
+  padding: 2.4rem 4rem;
   margin: 0 auto;
 
   &__nav {
@@ -17,13 +17,13 @@
     }
 
     &__left {
-      max-width: 490px;
+      max-width: 49rem;
       width: 100%;
-      margin-right: 50px;
+      margin-right: 5rem;
     }
 
     &__right {
-      max-width: 325px;
+      max-width: 32.5rem;
       width: 100%;
     }
 
@@ -66,7 +66,7 @@
         &__top {
           display: flex;
           justify-content: space-between;
-          padding-right: 30px;
+          padding-right: 3rem;
         }
 
         &__top,
@@ -151,28 +151,39 @@
   &__content {
     padding: 24rem 0;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
 
     &__title {
       @extend %description-12;
       text-transform: uppercase;
       color: $col-boulder;
-      margin-bottom: 24px;
+      margin-bottom: 2.4rem;
     }
 
     &__desc {
       @extend %description-32;
       max-width: 95rem;
+      margin: 0 auto;
       width: 100%;
       @extend %links;
+
+      .contact-scroll {
+        color: $col-boulder;
+        transition: color 0.3s;
+        background: transparent;
+        border: 0;
+        @extend %description-32;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+          color: $col-orange;
+        }
+      }
     }
   }
 
   &__stack {
-    max-width: 1044px;
+    max-width: 104.4rem;
     margin-left: auto;
     padding-top: 16rem;
     padding-bottom: 24rem;
@@ -217,6 +228,18 @@
       padding-bottom: 5.5rem;
     }
   }
+
+  &__contact {
+    padding-top: 16rem;
+
+    &__desc {
+      @extend %description-16;
+      max-width: 44rem;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 6.4rem;
+    }
+  }
 }
 
 .home__projects__project {
@@ -234,7 +257,7 @@
     padding-right: 17.2rem;
 
     .label-1 {
-      max-width: 843px;
+      max-width: 84.3rem;
       width: 100%;
       display: flex;
       justify-content: space-between;

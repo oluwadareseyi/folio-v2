@@ -248,14 +248,14 @@ html.has-scroll-dragging {
   line-height: 1.3;
 }
 
-.home__stack, .home__hero .hero__title .bottom__right {
+.home__contact__desc, .home__stack, .home__hero .hero__title .bottom__right {
   font-family: "Open Sauce";
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.3;
 }
 
-.home__awards p, .home__content__desc {
+.home__awards p, .home__content__desc .contact-scroll, .home__content__desc {
   font-family: "Open Sauce";
   font-size: 3.2rem;
   line-height: 1.3;
@@ -342,7 +342,7 @@ html.has-scroll-dragging {
 }
 
 .home {
-  padding: 24px 40px;
+  padding: 2.4rem 4rem;
   margin: 0 auto;
 }
 .home__nav {
@@ -357,12 +357,12 @@ html.has-scroll-dragging {
   justify-content: space-between;
 }
 .home__nav__left {
-  max-width: 490px;
+  max-width: 49rem;
   width: 100%;
-  margin-right: 50px;
+  margin-right: 5rem;
 }
 .home__nav__right {
-  max-width: 325px;
+  max-width: 32.5rem;
   width: 100%;
 }
 .home__nav .nav__folio, .home__nav .nav__availability {
@@ -391,7 +391,7 @@ html.has-scroll-dragging {
 .home__hero .hero__title__top {
   display: flex;
   justify-content: space-between;
-  padding-right: 30px;
+  padding-right: 3rem;
 }
 .home__hero .hero__title__top, .home__hero .hero__title__bottom {
   width: 100%;
@@ -452,22 +452,30 @@ html.has-scroll-dragging {
 .home__content {
   padding: 24rem 0;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 .home__content__title {
   text-transform: uppercase;
   color: #777777;
-  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
 }
 .home__content__desc {
   max-width: 95rem;
+  margin: 0 auto;
   width: 100%;
 }
+.home__content__desc .contact-scroll {
+  color: #777777;
+  transition: color 0.3s;
+  background: transparent;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+.home__content__desc .contact-scroll:hover {
+  color: #cb450c;
+}
 .home__stack {
-  max-width: 1044px;
+  max-width: 104.4rem;
   margin-left: auto;
   padding-top: 16rem;
   padding-bottom: 24rem;
@@ -495,6 +503,15 @@ html.has-scroll-dragging {
   max-width: 55.5rem;
   padding-bottom: 5.5rem;
 }
+.home__contact {
+  padding-top: 16rem;
+}
+.home__contact__desc {
+  max-width: 44rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 6.4rem;
+}
 
 .home__projects__project {
   color: #777777;
@@ -509,7 +526,7 @@ html.has-scroll-dragging {
   padding-right: 17.2rem;
 }
 .home__projects__project__label .label-1 {
-  max-width: 843px;
+  max-width: 84.3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;

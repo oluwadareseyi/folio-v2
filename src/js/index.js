@@ -2,6 +2,9 @@ import LocomotiveScroll from "locomotive-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Home from "./pages/home";
+const toContactButtons = document.querySelectorAll(".contact-scroll");
+const footer = document.getElementById("js-footer");
+import each from "lodash/each";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +38,18 @@ ScrollTrigger.scrollerProxy(scroll.el, {
 });
 
 export default class Home {
-  constructor() {
+  constructor(scroll) {
+    this.locomotive = scroll;
     this.heroTextAnimation();
+    this.homeActions();
+  }
+
+  homeActions() {
+    each(toContactButtons, (button) => {
+      button.onclick = () => {
+        this.locomotive.scrollTo(footer);
+      };
+    });
   }
 
   homeIntroAnimation() {}
@@ -56,4 +69,4 @@ export default class Home {
   }
 }
 
-new Home();
+new Home(scroll);
