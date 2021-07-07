@@ -1,8 +1,16 @@
 %description-12 {
   font-size: 12px;
+  font-family: $font-sauce;
 }
 
 %description-16 {
   font-family: $font-sauce;
-  font-size: 1.65rem;
+  font-size: 1.6rem;
+}
+
+%description-32 {
+  font-family: $font-sauce;
+  font-size: 3.2rem;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
 }

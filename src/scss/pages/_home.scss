@@ -103,6 +103,7 @@
 
       &__paragraph {
         color: $col-gray;
+        font-weight: 400;
         line-height: 1.3;
 
         span {
@@ -151,6 +152,28 @@
 
   &__community {
     padding: 24rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      @extend %description-12;
+      text-transform: uppercase;
+      color: $col-boulder;
+      margin-bottom: 24px;
+    }
+
+    &__desc {
+      @extend %description-32;
+      max-width: 950px;
+      width: 100%;
+
+      a {
+        color: $col-boulder;
+      }
+    }
   }
 }
 
@@ -193,14 +216,6 @@
           }
         }
       }
-
-      // &:hover {
-      //   .title__main {
-      //     background: $col-orange;
-      //     -webkit-background-clip: text;
-      //     -webkit-text-fill-color: transparent;
-      //   }
-      // }
     }
 
     .title__main {
