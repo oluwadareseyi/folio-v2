@@ -11,6 +11,10 @@ const scroll = new LocomotiveScroll({
   smooth: true,
 });
 
+setTimeout(() => {
+  scroll.update();
+}, 1000);
+
 scroll.on("scroll", ScrollTrigger.update);
 
 ScrollTrigger.scrollerProxy(scroll.el, {

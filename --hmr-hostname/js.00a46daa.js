@@ -10583,6 +10583,9 @@ var scroll = new _locomotiveScroll.default({
   el: scrollEl,
   smooth: true
 });
+setTimeout(function () {
+  scroll.update();
+}, 1000);
 scroll.on("scroll", _ScrollTrigger.ScrollTrigger.update);
 
 _ScrollTrigger.ScrollTrigger.scrollerProxy(scroll.el, {

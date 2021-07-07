@@ -452,6 +452,11 @@ html.has-scroll-dragging {
   -webkit-text-fill-color: transparent;
   transition: background 0.3s;
 }
+.home__projects__project__link.gradient .title__main .slide-up::before {
+  background: #cb450c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .home__projects__project__link .title__main {
   position: relative;
 }

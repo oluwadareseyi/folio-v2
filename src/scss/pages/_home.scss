@@ -184,6 +184,14 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: background 0.3s;
+
+        .slide-up {
+          &::before {
+            background: $col-orange;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
       }
 
       // &:hover {
