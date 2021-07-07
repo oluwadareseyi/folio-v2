@@ -193,7 +193,7 @@
           }
 
           @include media("<=phone") {
-            max-width: 27.5rem;
+            max-width: 255px;
             margin-left: auto;
           }
         }
@@ -359,7 +359,7 @@
       line-height: 0.9;
 
       &.mobile {
-        font-size: 9.95rem;
+        font-size: 99.5px;
         margin-bottom: 1.6rem;
         @include media(">phone") {
           display: none;

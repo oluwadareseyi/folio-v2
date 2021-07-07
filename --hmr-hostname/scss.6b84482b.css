@@ -243,7 +243,7 @@ html.has-scroll-dragging {
 }
 @media (max-width: 550px) {
   .home__awards .awards-title, .home__hero .hero__title .bottom__left, .home__hero .hero__title__left, .home__hero .hero__title__right, .home__hero .hero__title__dash, .home__hero .hero__title h1.mobile {
-    font-size: 16rem;
+    font-size: 160px;
   }
 }
 
@@ -254,7 +254,7 @@ html.has-scroll-dragging {
 }
 @media (max-width: 550px) {
   .home__contact .marquee__inner .inner-span, .home__projects__project__title {
-    font-size: 8rem;
+    font-size: 80px;
     word-break: break-word;
   }
 }
@@ -278,7 +278,7 @@ html.has-scroll-dragging {
 }
 @media (max-width: 550px) {
   .home__contact__email .to-copy, .home__contact__desc, .home__stack, .home__hero .hero__title .bottom__right {
-    font-size: 1.6rem;
+    font-size: 16px;
   }
 }
 
@@ -287,6 +287,11 @@ html.has-scroll-dragging {
   font-size: 3.2rem;
   line-height: 1.3;
   letter-spacing: -0.025em;
+}
+@media (max-width: 550px) {
+  .home__contact__email .email, .home__awards p, .home__content__desc .contact-scroll, .home__content__desc {
+    font-size: 32px;
+  }
 }
 
 .home__footer__right a, .home__awards a, .home__stack__paragraph a, .home__content__desc a {
@@ -668,7 +673,7 @@ html.has-scroll-dragging {
 }
 @media (max-width: 550px) {
   .home__hero .hero__title .bottom__right {
-    max-width: 27.5rem;
+    max-width: 255px;
     margin-left: auto;
   }
 }
@@ -800,7 +805,7 @@ html.has-scroll-dragging {
   line-height: 0.9;
 }
 .home__awards .awards-title.mobile {
-  font-size: 9.95rem;
+  font-size: 99.5px;
   margin-bottom: 1.6rem;
 }
 @media (min-width: 551px) {
