@@ -514,6 +514,9 @@ html.has-scroll-dragging {
 .home__contact .marquee {
   text-transform: uppercase;
 }
+.home__contact .marquee__wrap:hover .marquee__inner {
+  animation-play-state: paused;
+}
 .home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up {
   transform: translateY(0);
 }

@@ -245,6 +245,8 @@
       &__wrap {
         &:hover {
           .marquee__inner {
+            animation-play-state: paused;
+
             &:hover {
               .slide-up {
                 transform: translateY(0);
