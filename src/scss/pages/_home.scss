@@ -1,7 +1,6 @@
 .home {
   padding: 24px 40px;
   margin: 0 auto;
-  height: 200vh;
 
   &__nav {
     margin-bottom: 6.4rem;
@@ -36,90 +35,176 @@
     }
   }
 
-  .hero {
-    &__title {
-      line-height: 0.9;
-      color: $col-boulder;
+  &__hero {
+    margin-bottom: 9.6rem;
 
-      .hero__hover {
-        transition: color 0.2s;
-
-        &:hover {
-          color: $col-gray;
-        }
-      }
-
-      &__left,
-      &__right,
-      &__dash {
-        display: inline-block;
-        @extend %title-328;
-        letter-spacing: -0.105em;
-      }
-
-      &__dash {
-        transform: scaleX(1.1);
-      }
-
-      &__top {
-        display: flex;
-        justify-content: space-between;
-        padding-right: 30px;
-      }
-
-      &__top,
-      &__bottom {
-        width: 100%;
-
-        &__overflow {
-          display: inline-flex;
-          width: 100%;
-        }
-      }
-
-      &__bottom {
-        display: flex;
-        justify-content: space-between;
-      }
-      .bottom__left {
-        @extend %title-328;
-        letter-spacing: -0.105em;
-        flex-shrink: 0;
-      }
-
-      .bottom__right {
-        @extend %description-16;
-        position: relative;
-        z-index: 1;
-        max-width: 32.5rem;
-        width: 100%;
-        padding: 2rem 0 5rem;
-        display: flex;
-        flex-direction: column;
-        // padding-right: 20px;
-      }
-    }
-
-    &__paragraph {
-      color: $col-gray;
-      line-height: 1.3;
-
-      span {
+    .hero {
+      &__title {
+        line-height: 0.9;
         color: $col-boulder;
-        text-transform: uppercase;
+
+        .hero__hover {
+          transition: color 0.2s;
+
+          &:hover {
+            color: $col-gray;
+          }
+        }
+
+        &__left,
+        &__right,
+        &__dash {
+          display: inline-block;
+          @extend %title-328;
+          letter-spacing: -0.105em;
+        }
+
+        &__dash {
+          transform: scaleX(1.05);
+        }
+
+        &__top {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 30px;
+        }
+
+        &__top,
+        &__bottom {
+          width: 100%;
+
+          &__overflow {
+            display: inline-flex;
+            width: 100%;
+          }
+        }
+
+        &__bottom {
+          display: flex;
+          justify-content: space-between;
+        }
+        .bottom__left {
+          @extend %title-328;
+          letter-spacing: -0.105em;
+          flex-shrink: 0;
+        }
+
+        .bottom__right {
+          @extend %description-16;
+          position: relative;
+          z-index: 1;
+          max-width: 32.5rem;
+          width: 100%;
+          padding: 2rem 0 5rem;
+          display: flex;
+          flex-direction: column;
+        }
       }
 
-      .first-word {
-        @extend %description-12;
+      &__paragraph {
+        color: $col-gray;
+        line-height: 1.3;
+
+        span {
+          color: $col-boulder;
+          text-transform: uppercase;
+        }
+
+        .first-word {
+          @extend %description-12;
+        }
+      }
+
+      &__scroll {
+        margin-top: auto;
+        color: $col-boulder;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
+  }
 
-    &__scroll {
-      margin-top: auto;
-      color: $col-boulder;
+  &__projects {
+    &__line {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      span {
+        height: 2px;
+        background: $col-boulder;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        display: inline-block;
+      }
+
+      &.right {
+        span {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__community {
+    padding: 24rem 0;
+  }
+}
+
+.home__projects__project {
+  color: $col-boulder;
+
+  &__label {
+    @extend %description-12;
+    line-height: 1.3;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__label {
+    margin-top: 3.2rem;
+    padding-right: 17.2rem;
+
+    .label-1 {
+      max-width: 843px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+    }
+  }
+
+  &__link {
+    &.gradient {
+      .title__main {
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: background 0.3s;
+      }
+
+      &:hover {
+        .title__main {
+          background: $col-orange;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @extend %title-160;
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: uppercase;
+    padding-top: 6.4rem;
+    padding-bottom: 4.5rem;
+    .inline-ovh {
+      display: inline-flex;
+      overflow: hidden;
     }
   }
 }

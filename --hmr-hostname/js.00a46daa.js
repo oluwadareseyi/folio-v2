@@ -10618,8 +10618,7 @@ var Home = /*#__PURE__*/function () {
           scroller: "[data-scroll-container]",
           scrub: true,
           start: "-8% 9%",
-          end: "110% 20%",
-          markers: true
+          end: "110% 20%"
         },
         scaleX: 4,
         ease: "none"

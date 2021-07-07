@@ -45,7 +45,6 @@ export default class Home {
         scrub: true,
         start: "-8% 9%",
         end: "110% 20%",
-        markers: true,
       },
       scaleX: 4,
       ease: "none",

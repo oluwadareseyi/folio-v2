@@ -223,16 +223,22 @@ html.has-scroll-dragging {
   cursor: grabbing;
 }
 
-.home .hero__title .bottom__left, .home .hero__title__left, .home .hero__title__right, .home .hero__title__dash {
+.home__hero .hero__title .bottom__left, .home__hero .hero__title__left, .home__hero .hero__title__right, .home__hero .hero__title__dash {
   font-size: 32.8rem;
   font-family: "Bebas Neue", cursive;
 }
 
-.home .hero__paragraph .first-word, .home__nav {
+.home__projects__project__title {
+  font-size: 16rem;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: -0.025em;
+}
+
+.home__projects__project__label, .home__hero .hero__paragraph .first-word, .home__nav {
   font-size: 12px;
 }
 
-.home .hero__title .bottom__right {
+.home__hero .hero__title .bottom__right {
   font-family: "Open Sauce", sans-serif;
   font-size: 1.65rem;
 }
@@ -291,7 +297,7 @@ html.has-scroll-dragging {
 .c-infinite .c-link__inner {
   display: flex;
   transform: translateY(-100%);
-  animation: infiniteArrow 1.5s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: infiniteArrow 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .c-infinite .c-link__inner > span {
   /* white-space: nowrap; */
@@ -311,7 +317,6 @@ html.has-scroll-dragging {
 .home {
   padding: 24px 40px;
   margin: 0 auto;
-  height: 200vh;
 }
 .home__nav {
   margin-bottom: 6.4rem;
@@ -336,44 +341,47 @@ html.has-scroll-dragging {
 .home__nav .nav__folio, .home__nav .nav__availability {
   color: #777777;
 }
-.home .hero__title {
+.home__hero {
+  margin-bottom: 9.6rem;
+}
+.home__hero .hero__title {
   line-height: 0.9;
   color: #777777;
 }
-.home .hero__title .hero__hover {
+.home__hero .hero__title .hero__hover {
   transition: color 0.2s;
 }
-.home .hero__title .hero__hover:hover {
+.home__hero .hero__title .hero__hover:hover {
   color: #aaaaaa;
 }
-.home .hero__title__left, .home .hero__title__right, .home .hero__title__dash {
+.home__hero .hero__title__left, .home__hero .hero__title__right, .home__hero .hero__title__dash {
   display: inline-block;
   letter-spacing: -0.105em;
 }
-.home .hero__title__dash {
-  transform: scaleX(1.1);
+.home__hero .hero__title__dash {
+  transform: scaleX(1.05);
 }
-.home .hero__title__top {
+.home__hero .hero__title__top {
   display: flex;
   justify-content: space-between;
   padding-right: 30px;
 }
-.home .hero__title__top, .home .hero__title__bottom {
+.home__hero .hero__title__top, .home__hero .hero__title__bottom {
   width: 100%;
 }
-.home .hero__title__top__overflow, .home .hero__title__bottom__overflow {
+.home__hero .hero__title__top__overflow, .home__hero .hero__title__bottom__overflow {
   display: inline-flex;
   width: 100%;
 }
-.home .hero__title__bottom {
+.home__hero .hero__title__bottom {
   display: flex;
   justify-content: space-between;
 }
-.home .hero__title .bottom__left {
+.home__hero .hero__title .bottom__left {
   letter-spacing: -0.105em;
   flex-shrink: 0;
 }
-.home .hero__title .bottom__right {
+.home__hero .hero__title .bottom__right {
   position: relative;
   z-index: 1;
   max-width: 32.5rem;
@@ -382,20 +390,82 @@ html.has-scroll-dragging {
   display: flex;
   flex-direction: column;
 }
-.home .hero__paragraph {
+.home__hero .hero__paragraph {
   color: #aaaaaa;
   line-height: 1.3;
 }
-.home .hero__paragraph span {
+.home__hero .hero__paragraph span {
   color: #777777;
   text-transform: uppercase;
 }
-.home .hero__scroll {
+.home__hero .hero__scroll {
   margin-top: auto;
   color: #777777;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.home__projects__line {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.home__projects__line span {
+  height: 2px;
+  background: #777777;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: inline-block;
+}
+.home__projects__line.right span {
+  left: unset;
+  right: 0;
+}
+.home__community {
+  padding: 24rem 0;
+}
+
+.home__projects__project {
+  color: #777777;
+}
+.home__projects__project__label {
+  line-height: 1.3;
+  display: flex;
+  justify-content: flex-end;
+}
+.home__projects__project__label {
+  margin-top: 3.2rem;
+  padding-right: 17.2rem;
+}
+.home__projects__project__label .label-1 {
+  max-width: 843px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.home__projects__project__link.gradient .title__main {
+  background: linear-gradient(90deg, rgba(233, 227, 198, 0.5) 0%, rgba(233, 198, 217, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.3s;
+}
+.home__projects__project__link.gradient:hover .title__main {
+  background: #cb450c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home__projects__project__title {
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  padding-top: 6.4rem;
+  padding-bottom: 4.5rem;
+}
+.home__projects__project__title .inline-ovh {
+  display: inline-flex;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=/scss.6b84482b.css.map */
