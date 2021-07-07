@@ -245,9 +245,14 @@
       &__wrap {
         &:hover {
           .marquee__inner {
-            span {
-              color: $col-orange;
-              transform: skewX(-20deg);
+            &:hover {
+              .slide-up {
+                transform: translateY(0);
+
+                &::before {
+                  transform: translateY(0);
+                }
+              }
             }
           }
         }
@@ -259,20 +264,40 @@
         align-items: center;
         display: flex;
         position: relative;
-        animation: marquee 15s linear infinite;
+        animation: marquee 30s linear infinite;
         will-change: transform;
+        padding-top: 5.8rem;
+        padding-bottom: 2.3rem;
 
         span {
-          text-transform: uppercase;
-          @extend %title-160;
           white-space: nowrap;
-          color: $col-boulder;
-          padding-top: 5.8rem;
-          padding-bottom: 2.3rem;
           padding-left: 2rem;
           padding-right: 2rem;
-          transition: transform 0.3s;
-          display: inline-block;
+        }
+
+        .inner-span {
+          text-transform: uppercase;
+          @extend %title-160;
+          color: $col-boulder;
+          position: relative;
+
+          .slide-up {
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            transform: translateY(100%);
+            transition: transform 275ms ease;
+
+            &::before {
+              display: inline-block;
+              content: attr(data-content);
+              white-space: nowrap;
+              color: $col-orange;
+              transform: translateY(-100%);
+              transition: transform 275ms ease;
+            }
+          }
         }
       }
 

@@ -236,7 +236,7 @@ html.has-scroll-dragging {
   font-family: "Bebas Neue", cursive;
 }
 
-.home__projects__project__title, .home__contact .marquee__inner span {
+.home__projects__project__title, .home__contact .marquee__inner .inner-span {
   font-size: 16rem;
   font-family: "Bebas Neue", cursive;
   letter-spacing: -0.025em;
@@ -514,9 +514,11 @@ html.has-scroll-dragging {
 .home__contact .marquee {
   text-transform: uppercase;
 }
-.home__contact .marquee__wrap:hover .marquee__inner span {
-  color: #cb450c;
-  transform: skewX(-20deg);
+.home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up {
+  transform: translateY(0);
+}
+.home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up::before {
+  transform: translateY(0);
 }
 .home__contact .marquee__inner {
   height: 100%;
@@ -524,19 +526,36 @@ html.has-scroll-dragging {
   align-items: center;
   display: flex;
   position: relative;
-  animation: marquee 15s linear infinite;
+  animation: marquee 30s linear infinite;
   will-change: transform;
-}
-.home__contact .marquee__inner span {
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: #777777;
   padding-top: 5.8rem;
   padding-bottom: 2.3rem;
+}
+.home__contact .marquee__inner span {
+  white-space: nowrap;
   padding-left: 2rem;
   padding-right: 2rem;
-  transition: transform 0.3s;
+}
+.home__contact .marquee__inner .inner-span {
+  text-transform: uppercase;
+  color: #777777;
+  position: relative;
+}
+.home__contact .marquee__inner .inner-span .slide-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 275ms ease;
+}
+.home__contact .marquee__inner .inner-span .slide-up::before {
   display: inline-block;
+  content: attr(data-content);
+  white-space: nowrap;
+  color: #cb450c;
+  transform: translateY(-100%);
+  transition: transform 275ms ease;
 }
 @keyframes marquee {
   100% {
