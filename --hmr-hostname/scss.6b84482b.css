@@ -236,7 +236,7 @@ html.has-scroll-dragging {
   font-family: "Bebas Neue", cursive;
 }
 
-.home__projects__project__title {
+.home__projects__project__title, .home__contact .marquee__inner span {
   font-size: 16rem;
   font-family: "Bebas Neue", cursive;
   letter-spacing: -0.025em;
@@ -421,7 +421,6 @@ html.has-scroll-dragging {
   color: #aaaaaa;
 }
 .home__hero .hero__paragraph span {
-  color: #777777;
   text-transform: uppercase;
 }
 .home__hero .hero__scroll {
@@ -511,6 +510,38 @@ html.has-scroll-dragging {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 6.4rem;
+}
+.home__contact .marquee {
+  text-transform: uppercase;
+}
+.home__contact .marquee__wrap:hover .marquee__inner span {
+  color: #cb450c;
+  transform: skewX(-20deg);
+}
+.home__contact .marquee__inner {
+  height: 100%;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  position: relative;
+  animation: marquee 15s linear infinite;
+  will-change: transform;
+}
+.home__contact .marquee__inner span {
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #777777;
+  padding-top: 5.8rem;
+  padding-bottom: 2.3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+@keyframes marquee {
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .home__projects__project {

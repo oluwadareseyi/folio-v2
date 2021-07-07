@@ -105,7 +105,6 @@
         color: $col-gray;
 
         span {
-          color: $col-boulder;
           text-transform: uppercase;
         }
 
@@ -238,6 +237,50 @@
       text-align: center;
       margin: 0 auto;
       margin-bottom: 6.4rem;
+    }
+
+    .marquee {
+      text-transform: uppercase;
+
+      &__wrap {
+        &:hover {
+          .marquee__inner {
+            span {
+              color: $col-orange;
+              transform: skewX(-20deg);
+            }
+          }
+        }
+      }
+
+      &__inner {
+        height: 100%;
+        width: fit-content;
+        align-items: center;
+        display: flex;
+        position: relative;
+        animation: marquee 15s linear infinite;
+        will-change: transform;
+
+        span {
+          text-transform: uppercase;
+          @extend %title-160;
+          white-space: nowrap;
+          color: $col-boulder;
+          padding-top: 5.8rem;
+          padding-bottom: 2.3rem;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          transition: transform 0.3s;
+          display: inline-block;
+        }
+      }
+
+      @keyframes marquee {
+        100% {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
     }
   }
 }
