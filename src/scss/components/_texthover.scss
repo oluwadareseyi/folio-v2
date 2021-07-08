@@ -1,6 +1,18 @@
 .home__projects__project {
   color: $col-boulder;
 
+  @media (any-pointer: fine) {
+    &:hover {
+      .label__inner {
+        p {
+          &:last-of-type {
+            color: $col-gray;
+          }
+        }
+      }
+    }
+  }
+
   .project__link {
     @include media("<=phone") {
     }
@@ -33,6 +45,10 @@
   &__label {
     margin-top: 3.2rem;
     padding-right: 2.2rem;
+
+    p {
+      transition: color 0.3s;
+    }
 
     @include media(">tablet") {
       padding-right: 17.2rem;

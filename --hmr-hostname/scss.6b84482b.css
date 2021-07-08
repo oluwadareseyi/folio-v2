@@ -169,7 +169,7 @@ html {
 }
 
 body {
-  font-family: "Open Sauce", sans-serif;
+  font-family: "Open Sauce", arial, sans-serif;
   font-weight: 500;
   min-height: 100vh;
   font-size: 1.6rem;
@@ -238,7 +238,7 @@ html.has-scroll-dragging {
 
 .home__awards .awards-title, .home__hero .hero__title .bottom__left, .home__hero .hero__title__left, .home__hero .hero__title__right, .home__hero .hero__title__dash, .home__hero .hero__title h1.mobile {
   font-size: 32.8rem;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   word-break: break-word;
 }
 @media (max-width: 550px) {
@@ -249,7 +249,7 @@ html.has-scroll-dragging {
 
 .home__contact .marquee__inner .inner-span, .home__projects__project__title {
   font-size: 16rem;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   letter-spacing: -0.025em;
 }
 @media (max-width: 550px) {
@@ -261,12 +261,12 @@ html.has-scroll-dragging {
 
 .home__stack__paragraph .first-word, .home__content__title, .home__hero .hero__paragraph .first-word, .home__nav, .home__projects__project__label {
   font-size: 12px;
-  font-family: "Open Sauce";
+  font-family: "Open Sauce", arial;
   line-height: 1.3;
 }
 
 .home__contact__email .to-copy, .home__contact__desc, .home__stack, .home__hero .hero__title .bottom__right {
-  font-family: "Open Sauce";
+  font-family: "Open Sauce", arial;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.3;
@@ -283,7 +283,7 @@ html.has-scroll-dragging {
 }
 
 .home__contact__email .email, .home__awards p, .home__content__desc .contact-scroll, .home__content__desc {
-  font-family: "Open Sauce";
+  font-family: "Open Sauce", arial;
   font-size: 3.2rem;
   line-height: 1.3;
   letter-spacing: -0.025em;
@@ -306,6 +306,11 @@ html.has-scroll-dragging {
 
 .home__projects__project {
   color: #777777;
+}
+@media (any-pointer: fine) {
+  .home__projects__project:hover .label__inner p:last-of-type {
+    color: #aaaaaa;
+  }
 }
 .home__projects__project .project__link {
   text-align: right;
@@ -333,6 +338,9 @@ html.has-scroll-dragging {
 .home__projects__project__label {
   margin-top: 3.2rem;
   padding-right: 2.2rem;
+}
+.home__projects__project__label p {
+  transition: color 0.3s;
 }
 @media (min-width: 769px) {
   .home__projects__project__label {
@@ -1007,7 +1015,7 @@ html.has-scroll-dragging {
 }
 .home__footer__left {
   display: flex;
-  font-family: "Open Sauce";
+  font-family: "Open Sauce", arial;
 }
 @media (min-width: 769px) {
   .home__footer__left {

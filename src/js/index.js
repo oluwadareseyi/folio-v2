@@ -68,7 +68,7 @@ export default class Home {
 
       setTimeout(() => {
         toCopyText.textContent = "Click To Copy";
-      }, 500);
+      }, 2000);
     });
   }
 

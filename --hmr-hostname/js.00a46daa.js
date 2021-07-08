@@ -11690,7 +11690,7 @@ var Home = /*#__PURE__*/function () {
         toCopyText.textContent = "copied";
         setTimeout(function () {
           toCopyText.textContent = "Click To Copy";
-        }, 500);
+        }, 2000);
       });
     }
   }, {
