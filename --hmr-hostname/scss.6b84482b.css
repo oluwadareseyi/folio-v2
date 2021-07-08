@@ -460,7 +460,7 @@ html.has-scroll-dragging {
   align-items: center;
   position: relative;
   z-index: 1;
-  overflow: auto;
+  overflow: hidden;
 }
 .c-button .c-link__inner {
   display: flex;
@@ -492,7 +492,7 @@ html.has-scroll-dragging {
   align-items: center;
   position: relative;
   z-index: 1;
-  overflow: auto;
+  overflow: hidden;
 }
 .c-infinite .c-link__inner {
   display: flex;

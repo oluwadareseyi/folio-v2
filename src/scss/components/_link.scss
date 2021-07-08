@@ -23,7 +23,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    overflow: auto;
+    overflow: hidden;
 
     &__inner {
       display: flex;
@@ -63,7 +63,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    overflow: auto;
+    overflow: hidden;
 
     &__inner {
       display: flex;
