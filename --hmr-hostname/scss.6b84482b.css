@@ -514,12 +514,12 @@ html.has-scroll-dragging {
   }
 }
 
-.home__contact__desc, .home__awards, .home__content, .home__projects, .home__hero, .home__nav {
+.home__contact__desc, .home__contact .line-wrapper, .home__awards, .home__content, .home__projects, .home__hero, .home__nav {
   padding-left: 4rem;
   padding-right: 4rem;
 }
 @media (max-width: 550px) {
-  .home__contact__desc, .home__awards, .home__content, .home__projects, .home__hero, .home__nav {
+  .home__contact__desc, .home__contact .line-wrapper, .home__awards, .home__content, .home__projects, .home__hero, .home__nav {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
   }
