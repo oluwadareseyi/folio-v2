@@ -369,6 +369,10 @@
         @include media(">phone") {
           display: none;
         }
+
+        span {
+          display: inline-block;
+        }
       }
 
       &.desktop {

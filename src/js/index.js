@@ -2,11 +2,14 @@ import LocomotiveScroll from "locomotive-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import each from "lodash/each";
+import { copyText } from "./utils/index";
 // import Home from "./pages/home";
 
 const toContactButtons = document.querySelectorAll(".contact-scroll");
 const footer = document.getElementById("js-footer");
 const scrollEl = document.querySelector("[data-scroll-container]");
+const emailButton = document.querySelector("button.email");
+const toCopyText = document.querySelector(".to-copy span");
 // const body = document.body;
 
 gsap.registerPlugin(ScrollTrigger);
@@ -48,6 +51,7 @@ export default class Home {
     this.locomotive = scroll;
     this.heroTextAnimation();
     this.homeIntro();
+    this.homeAnimations();
     this.homeActions();
   }
 
@@ -57,14 +61,19 @@ export default class Home {
         this.locomotive.scrollTo(footer);
       };
     });
+
+    emailButton.addEventListener("click", (e) => {
+      copyText(e);
+      toCopyText.textContent = "copied";
+
+      setTimeout(() => {
+        toCopyText.textContent = "Click To Copy";
+      }, 500);
+    });
   }
 
   homeIntro() {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        this.homeAnimations();
-      },
-    });
+    const tl = gsap.timeline();
 
     gsap.to(scrollEl, {
       autoAlpha: 1,
@@ -123,6 +132,81 @@ export default class Home {
         width: 0,
       });
     });
+
+    if (window.innerWidth <= 768) {
+      gsap.utils.toArray(".home__projects__project").forEach((el) => {
+        const text = el.querySelector(".title__main");
+        const link = el.querySelector(".project__link");
+        gsap.from([text, link], {
+          scrollTrigger: {
+            trigger: el,
+            scroller: "[data-scroll-container]",
+          },
+          duration: 1.5,
+          yPercent: 100,
+          stagger: {
+            amount: 0.2,
+          },
+          ease: "power4.out",
+        });
+      });
+
+      const awardsTl = gsap.timeline({
+        defaults: {
+          ease: "power1.out",
+        },
+        scrollTrigger: {
+          trigger: ".home__awards__top",
+          scroller: "[data-scroll-container]",
+          start: "top 80%",
+        },
+      });
+      awardsTl
+        .from(".awards-title.mobile span", {
+          duration: 1,
+          rotateX: "-90deg",
+          stagger: {
+            amount: 0.2,
+          },
+        })
+        .from(
+          ".home__awards .awards-links",
+          {
+            duration: 0.7,
+            yPercent: 60,
+            opacity: 0,
+          },
+          "-=1"
+        );
+    } else {
+      const awardsTl = gsap.timeline({
+        defaults: {
+          ease: "power1.out",
+        },
+        scrollTrigger: {
+          trigger: ".home__awards__top",
+          scroller: "[data-scroll-container]",
+          start: "top 60%",
+        },
+      });
+      awardsTl
+        .from(".awards-title.desktop", {
+          duration: 1,
+          rotateX: "-90deg",
+          stagger: {
+            amount: 0.2,
+          },
+        })
+        .from(
+          ".home__awards .awards-links",
+          {
+            duration: 0.5,
+            yPercent: 100,
+            opacity: 0,
+          },
+          "-=1"
+        );
+    }
   }
 
   heroTextAnimation() {

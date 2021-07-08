@@ -11580,7 +11580,29 @@ module.exports = forEach;
 },{"./_arrayEach":"../node_modules/lodash/_arrayEach.js","./_baseEach":"../node_modules/lodash/_baseEach.js","./_castFunction":"../node_modules/lodash/_castFunction.js","./isArray":"../node_modules/lodash/isArray.js"}],"../node_modules/lodash/each.js":[function(require,module,exports) {
 module.exports = require('./forEach');
 
-},{"./forEach":"../node_modules/lodash/forEach.js"}],"js/index.js":[function(require,module,exports) {
+},{"./forEach":"../node_modules/lodash/forEach.js"}],"js/utils/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.copyText = void 0;
+
+var copyText = function copyText(e) {
+  var text = e.target.innerText;
+  var textArea = document.createElement("textarea");
+  textArea.width = "1px";
+  textArea.height = "1px";
+  textArea.background = "transparents";
+  textArea.value = text;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+};
+
+exports.copyText = copyText;
+},{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -11596,6 +11618,8 @@ var _ScrollTrigger = require("gsap/ScrollTrigger");
 
 var _each = _interopRequireDefault(require("lodash/each"));
 
+var _index = require("./utils/index");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11607,7 +11631,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 // import Home from "./pages/home";
 var toContactButtons = document.querySelectorAll(".contact-scroll");
 var footer = document.getElementById("js-footer");
-var scrollEl = document.querySelector("[data-scroll-container]"); // const body = document.body;
+var scrollEl = document.querySelector("[data-scroll-container]");
+var emailButton = document.querySelector("button.email");
+var toCopyText = document.querySelector(".to-copy span"); // const body = document.body;
 
 _gsap.default.registerPlugin(_ScrollTrigger.ScrollTrigger);
 
@@ -11645,6 +11671,7 @@ var Home = /*#__PURE__*/function () {
     this.locomotive = scroll;
     this.heroTextAnimation();
     this.homeIntro();
+    this.homeAnimations();
     this.homeActions();
   }
 
@@ -11658,17 +11685,18 @@ var Home = /*#__PURE__*/function () {
           _this.locomotive.scrollTo(footer);
         };
       });
+      emailButton.addEventListener("click", function (e) {
+        (0, _index.copyText)(e);
+        toCopyText.textContent = "copied";
+        setTimeout(function () {
+          toCopyText.textContent = "Click To Copy";
+        }, 500);
+      });
     }
   }, {
     key: "homeIntro",
     value: function homeIntro() {
-      var _this2 = this;
-
-      var tl = _gsap.default.timeline({
-        onComplete: function onComplete() {
-          _this2.homeAnimations();
-        }
-      });
+      var tl = _gsap.default.timeline();
 
       _gsap.default.to(scrollEl, {
         autoAlpha: 1
@@ -11722,6 +11750,72 @@ var Home = /*#__PURE__*/function () {
           width: 0
         });
       });
+
+      if (window.innerWidth <= 768) {
+        _gsap.default.utils.toArray(".home__projects__project").forEach(function (el) {
+          var text = el.querySelector(".title__main");
+          var link = el.querySelector(".project__link");
+
+          _gsap.default.from([text, link], {
+            scrollTrigger: {
+              trigger: el,
+              scroller: "[data-scroll-container]"
+            },
+            duration: 1.5,
+            yPercent: 100,
+            stagger: {
+              amount: 0.2
+            },
+            ease: "power4.out"
+          });
+        });
+
+        var awardsTl = _gsap.default.timeline({
+          defaults: {
+            ease: "power1.out"
+          },
+          scrollTrigger: {
+            trigger: ".home__awards__top",
+            scroller: "[data-scroll-container]",
+            start: "top 80%"
+          }
+        });
+
+        awardsTl.from(".awards-title.mobile span", {
+          duration: 1,
+          rotateX: "-90deg",
+          stagger: {
+            amount: 0.2
+          }
+        }).from(".home__awards .awards-links", {
+          duration: 0.7,
+          yPercent: 60,
+          opacity: 0
+        }, "-=1");
+      } else {
+        var _awardsTl = _gsap.default.timeline({
+          defaults: {
+            ease: "power1.out"
+          },
+          scrollTrigger: {
+            trigger: ".home__awards__top",
+            scroller: "[data-scroll-container]",
+            start: "top 60%"
+          }
+        });
+
+        _awardsTl.from(".awards-title.desktop", {
+          duration: 1,
+          rotateX: "-90deg",
+          stagger: {
+            amount: 0.2
+          }
+        }).from(".home__awards .awards-links", {
+          duration: 0.5,
+          yPercent: 100,
+          opacity: 0
+        }, "-=1");
+      }
     }
   }, {
     key: "heroTextAnimation",
@@ -11745,7 +11839,7 @@ var Home = /*#__PURE__*/function () {
 
 exports.default = Home;
 new Home(scroll);
-},{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","gsap":"../node_modules/gsap/index.js","gsap/ScrollTrigger":"../node_modules/gsap/ScrollTrigger.js","lodash/each":"../node_modules/lodash/each.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"locomotive-scroll":"../node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js","gsap":"../node_modules/gsap/index.js","gsap/ScrollTrigger":"../node_modules/gsap/ScrollTrigger.js","lodash/each":"../node_modules/lodash/each.js","./utils/index":"js/utils/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11773,7 +11867,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56489" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59035" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

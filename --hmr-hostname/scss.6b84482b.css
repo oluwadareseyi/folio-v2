@@ -818,6 +818,9 @@ html.has-scroll-dragging {
     display: none;
   }
 }
+.home__awards .awards-title.mobile span {
+  display: inline-block;
+}
 @media (max-width: 550px) {
   .home__awards .awards-title.desktop {
     display: none;
