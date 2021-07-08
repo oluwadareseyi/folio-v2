@@ -422,18 +422,16 @@
       overflow: hidden;
 
       &__wrap {
-        @media (any-pointer: fine) {
-          &:hover {
-            .marquee__inner {
-              animation-play-state: paused;
+        &:hover {
+          .marquee__inner {
+            animation-play-state: paused;
 
-              &:hover {
-                .slide-up {
+            &:hover {
+              .slide-up {
+                transform: translateY(0);
+
+                &::before {
                   transform: translateY(0);
-
-                  &::before {
-                    transform: translateY(0);
-                  }
                 }
               }
             }

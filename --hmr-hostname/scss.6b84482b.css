@@ -862,16 +862,14 @@ html.has-scroll-dragging {
   text-transform: uppercase;
   overflow: hidden;
 }
-@media (any-pointer: fine) {
-  .home__contact .marquee__wrap:hover .marquee__inner {
-    animation-play-state: paused;
-  }
-  .home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up {
-    transform: translateY(0);
-  }
-  .home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up::before {
-    transform: translateY(0);
-  }
+.home__contact .marquee__wrap:hover .marquee__inner {
+  animation-play-state: paused;
+}
+.home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up {
+  transform: translateY(0);
+}
+.home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up::before {
+  transform: translateY(0);
 }
 .home__contact .marquee__inner {
   height: 100%;
