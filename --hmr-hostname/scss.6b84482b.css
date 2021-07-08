@@ -519,6 +519,7 @@ html.has-scroll-dragging {
 
 .home {
   padding: 2.4rem 0;
+  visibility: hidden;
 }
 .home__nav {
   margin-bottom: 6.4rem;
@@ -640,9 +641,10 @@ html.has-scroll-dragging {
 .home__hero .hero__title__top, .home__hero .hero__title__bottom {
   width: 100%;
 }
-.home__hero .hero__title__top__overflow, .home__hero .hero__title__bottom__overflow {
+.home__hero .hero__title__top.overflow, .home__hero .hero__title__bottom.overflow {
   display: inline-flex;
   width: 100%;
+  overflow: hidden;
 }
 .home__hero .hero__title__bottom {
   justify-content: space-between;
@@ -702,6 +704,7 @@ html.has-scroll-dragging {
   position: relative;
   display: inline-block;
   width: 100%;
+  visibility: hidden;
 }
 .home__projects__line span {
   height: 2px;
@@ -754,8 +757,10 @@ html.has-scroll-dragging {
   font-weight: 500;
   cursor: pointer;
 }
-.home__content__desc .contact-scroll:hover {
-  color: #cb450c;
+@media (any-pointer: fine) {
+  .home__content__desc .contact-scroll:hover {
+    color: #cb450c;
+  }
 }
 .home__stack {
   max-width: 104.4rem;
@@ -854,14 +859,16 @@ html.has-scroll-dragging {
   text-transform: uppercase;
   overflow: hidden;
 }
-.home__contact .marquee__wrap:hover .marquee__inner {
-  animation-play-state: paused;
-}
-.home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up {
-  transform: translateY(0);
-}
-.home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up::before {
-  transform: translateY(0);
+@media (any-pointer: fine) {
+  .home__contact .marquee__wrap:hover .marquee__inner {
+    animation-play-state: paused;
+  }
+  .home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up {
+    transform: translateY(0);
+  }
+  .home__contact .marquee__wrap:hover .marquee__inner:hover .slide-up::before {
+    transform: translateY(0);
+  }
 }
 .home__contact .marquee__inner {
   height: 100%;

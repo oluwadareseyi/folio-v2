@@ -1,14 +1,16 @@
 import LocomotiveScroll from "locomotive-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import each from "lodash/each";
 // import Home from "./pages/home";
+
 const toContactButtons = document.querySelectorAll(".contact-scroll");
 const footer = document.getElementById("js-footer");
-import each from "lodash/each";
+const scrollEl = document.querySelector("[data-scroll-container]");
+// const body = document.body;
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scrollEl = document.querySelector("[data-scroll-container]");
 const scroll = new LocomotiveScroll({
   el: scrollEl,
   smooth: true,
@@ -20,25 +22,7 @@ const scroll = new LocomotiveScroll({
 
 setTimeout(() => {
   scroll.update();
-}, 1000);
-
-let device = "tablet";
-
-window.addEventListener("resize", () => {
-  const width = window.innerWidth;
-
-  if (width <= 768 && device !== "laptop") {
-    scroll.destroy();
-    scroll.init();
-    device = "laptop";
-  }
-
-  if (width > 768 && device === "laptop") {
-    scroll.destroy();
-    scroll.init();
-    device = "tablet";
-  }
-});
+}, 0);
 
 scroll.on("scroll", ScrollTrigger.update);
 
@@ -63,7 +47,7 @@ export default class Home {
   constructor(scroll) {
     this.locomotive = scroll;
     this.heroTextAnimation();
-    this.homeAnimations();
+    this.homeIntro();
     this.homeActions();
   }
 
@@ -75,7 +59,71 @@ export default class Home {
     });
   }
 
-  homeAnimations() {}
+  homeIntro() {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        this.homeAnimations();
+      },
+    });
+
+    gsap.to(scrollEl, {
+      autoAlpha: 1,
+    });
+
+    tl.from(".home__nav", {
+      duration: 0.5,
+      delay: 0.3,
+      opacity: 0,
+      yPercent: -100,
+      ease: "power4.out",
+    })
+      .from(".hero__title [title-overflow]", {
+        duration: 0.7,
+        yPercent: 100,
+        stagger: {
+          amount: 0.2,
+        },
+        ease: "power4.out",
+      })
+      .from(
+        ".hero__title .bottom__right",
+        {
+          duration: 1,
+          yPercent: 100,
+          opacity: 0,
+          ease: "power4.out",
+        },
+        "<20%"
+      )
+      .set(".hero__title .overflow", { overflow: "unset" })
+      .from(
+        ".hero__title .mobile",
+        {
+          duration: 0.7,
+          yPercent: 100,
+          stagger: {
+            amount: 0.2,
+          },
+          ease: "power4.out",
+        },
+        "-=1.4"
+      );
+  }
+
+  homeAnimations() {
+    gsap.to(".home__projects__line", { autoAlpha: 1 });
+    gsap.utils.toArray(".home__projects__line").forEach((el) => {
+      const line = el.querySelector("span");
+      gsap.from(line, {
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: el,
+          scroller: "[data-scroll-container]",
+        },
+        width: 0,
+      });
+    });
+  }
 
   heroTextAnimation() {
     gsap.to(".hero__title__dash.desktop", {

@@ -11607,10 +11607,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 // import Home from "./pages/home";
 var toContactButtons = document.querySelectorAll(".contact-scroll");
 var footer = document.getElementById("js-footer");
+var scrollEl = document.querySelector("[data-scroll-container]"); // const body = document.body;
 
 _gsap.default.registerPlugin(_ScrollTrigger.ScrollTrigger);
 
-var scrollEl = document.querySelector("[data-scroll-container]");
 var scroll = new _locomotiveScroll.default({
   el: scrollEl,
   smooth: true,
@@ -11621,23 +11621,7 @@ var scroll = new _locomotiveScroll.default({
 });
 setTimeout(function () {
   scroll.update();
-}, 1000);
-var device = "tablet";
-window.addEventListener("resize", function () {
-  var width = window.innerWidth;
-
-  if (width <= 768 && device !== "laptop") {
-    scroll.destroy();
-    scroll.init();
-    device = "laptop";
-  }
-
-  if (width > 768 && device === "laptop") {
-    scroll.destroy();
-    scroll.init();
-    device = "tablet";
-  }
-});
+}, 0);
 scroll.on("scroll", _ScrollTrigger.ScrollTrigger.update);
 
 _ScrollTrigger.ScrollTrigger.scrollerProxy(scroll.el, {
@@ -11660,7 +11644,7 @@ var Home = /*#__PURE__*/function () {
 
     this.locomotive = scroll;
     this.heroTextAnimation();
-    this.homeAnimations();
+    this.homeIntro();
     this.homeActions();
   }
 
@@ -11676,8 +11660,69 @@ var Home = /*#__PURE__*/function () {
       });
     }
   }, {
+    key: "homeIntro",
+    value: function homeIntro() {
+      var _this2 = this;
+
+      var tl = _gsap.default.timeline({
+        onComplete: function onComplete() {
+          _this2.homeAnimations();
+        }
+      });
+
+      _gsap.default.to(scrollEl, {
+        autoAlpha: 1
+      });
+
+      tl.from(".home__nav", {
+        duration: 0.5,
+        delay: 0.3,
+        opacity: 0,
+        yPercent: -100,
+        ease: "power4.out"
+      }).from(".hero__title [title-overflow]", {
+        duration: 0.7,
+        yPercent: 100,
+        stagger: {
+          amount: 0.2
+        },
+        ease: "power4.out"
+      }).from(".hero__title .bottom__right", {
+        duration: 1,
+        yPercent: 100,
+        opacity: 0,
+        ease: "power4.out"
+      }, "<20%").set(".hero__title .overflow", {
+        overflow: "unset"
+      }).from(".hero__title .mobile", {
+        duration: 0.7,
+        yPercent: 100,
+        stagger: {
+          amount: 0.2
+        },
+        ease: "power4.out"
+      }, "-=1.4");
+    }
+  }, {
     key: "homeAnimations",
-    value: function homeAnimations() {}
+    value: function homeAnimations() {
+      _gsap.default.to(".home__projects__line", {
+        autoAlpha: 1
+      });
+
+      _gsap.default.utils.toArray(".home__projects__line").forEach(function (el) {
+        var line = el.querySelector("span");
+
+        _gsap.default.from(line, {
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: el,
+            scroller: "[data-scroll-container]"
+          },
+          width: 0
+        });
+      });
+    }
   }, {
     key: "heroTextAnimation",
     value: function heroTextAnimation() {
@@ -11728,7 +11773,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63586" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56489" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
