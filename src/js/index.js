@@ -158,13 +158,13 @@ export default class Home {
         scrollTrigger: {
           trigger: ".home__awards__top",
           scroller: "[data-scroll-container]",
-          start: "top 80%",
         },
       });
       awardsTl
         .from(".awards-title.mobile span", {
           duration: 1,
-          rotateX: "-90deg",
+          opacity: 0,
+          yPercent: 100,
           stagger: {
             amount: 0.2,
           },
@@ -186,13 +186,13 @@ export default class Home {
         scrollTrigger: {
           trigger: ".home__awards__top",
           scroller: "[data-scroll-container]",
-          start: "top 60%",
         },
       });
       awardsTl
         .from(".awards-title.desktop", {
           duration: 1,
-          rotateX: "-90deg",
+          opacity: 0,
+          yPercent: 100,
           stagger: {
             amount: 0.2,
           },

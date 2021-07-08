@@ -11776,14 +11776,14 @@ var Home = /*#__PURE__*/function () {
           },
           scrollTrigger: {
             trigger: ".home__awards__top",
-            scroller: "[data-scroll-container]",
-            start: "top 80%"
+            scroller: "[data-scroll-container]"
           }
         });
 
         awardsTl.from(".awards-title.mobile span", {
           duration: 1,
-          rotateX: "-90deg",
+          opacity: 0,
+          yPercent: 100,
           stagger: {
             amount: 0.2
           }
@@ -11799,14 +11799,14 @@ var Home = /*#__PURE__*/function () {
           },
           scrollTrigger: {
             trigger: ".home__awards__top",
-            scroller: "[data-scroll-container]",
-            start: "top 60%"
+            scroller: "[data-scroll-container]"
           }
         });
 
         _awardsTl.from(".awards-title.desktop", {
           duration: 1,
-          rotateX: "-90deg",
+          opacity: 0,
+          yPercent: 100,
           stagger: {
             amount: 0.2
           }
