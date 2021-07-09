@@ -11647,7 +11647,7 @@ var scroll = new _locomotiveScroll.default({
 });
 setTimeout(function () {
   scroll.update();
-}, 1);
+}, 100);
 scroll.on("scroll", _ScrollTrigger.ScrollTrigger.update);
 
 _ScrollTrigger.ScrollTrigger.scrollerProxy(scroll.el, {
@@ -11867,7 +11867,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60382" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60500" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
