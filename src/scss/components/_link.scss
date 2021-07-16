@@ -15,6 +15,7 @@
       border-color: $col-orange;
       color: $col-black;
       background: $col-orange;
+      font-weight: 500;
     }
   }
 
@@ -30,6 +31,7 @@
       transform: translateY(0);
       // transition: transform 0.3s ease-out;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      margin-right: 2px;
 
       > span {
         /* white-space: nowrap; */
@@ -41,6 +43,7 @@
       position: absolute;
       top: 100%;
       display: none;
+      font-family: $font-sauce;
 
       @media (any-pointer: fine) {
         display: inline-block;
@@ -73,7 +76,6 @@
 
       > span {
         /* white-space: nowrap; */
-        margin-right: 2px;
       }
     }
 

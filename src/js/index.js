@@ -25,7 +25,7 @@ const scroll = new LocomotiveScroll({
 
 setTimeout(() => {
   scroll.update();
-}, 100);
+}, 1000);
 
 scroll.on("scroll", ScrollTrigger.update);
 

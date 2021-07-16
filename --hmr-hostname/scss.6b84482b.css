@@ -453,6 +453,7 @@ html.has-scroll-dragging {
     border-color: #cb450c;
     color: #111111;
     background: #cb450c;
+    font-weight: 500;
   }
 }
 .c-button .c-link {
@@ -466,6 +467,7 @@ html.has-scroll-dragging {
   display: flex;
   transform: translateY(0);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-right: 2px;
 }
 .c-button .c-link__inner > span {
   /* white-space: nowrap; */
@@ -475,6 +477,7 @@ html.has-scroll-dragging {
   position: absolute;
   top: 100%;
   display: none;
+  font-family: "Open Sauce", arial;
 }
 @media (any-pointer: fine) {
   .c-button .c-link__animated {
@@ -501,7 +504,6 @@ html.has-scroll-dragging {
 }
 .c-infinite .c-link__inner > span {
   /* white-space: nowrap; */
-  margin-right: 2px;
 }
 .c-infinite .c-link__animated {
   /* white-space: nowrap; */
