@@ -129,7 +129,7 @@ export default class Home {
           trigger: el,
           scroller: "[data-scroll-container]",
         },
-        width: 0,
+        scaleX: 0,
       });
     });
 

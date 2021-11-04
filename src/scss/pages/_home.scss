@@ -244,12 +244,12 @@
         top: 0;
         width: 100%;
         display: inline-block;
+        transform-origin: left top;
       }
 
       &.right {
         span {
-          left: unset;
-          right: 0;
+          transform-origin: right top;
         }
       }
     }
