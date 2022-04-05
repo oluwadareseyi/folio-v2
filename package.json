@@ -4,7 +4,7 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "dev": "rm -rf ./public && rm -rf ./.cache && parcel src/index.html -d public --open -p 3000",
+    "dev": "rm -rf ./public && rm -rf ./.cache && parcel src/index.html -d public -p 3000",
     "build": "parcel build src/index.html -d dist --public-url ./"
   },
   "keywords": [],

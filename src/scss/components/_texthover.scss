@@ -72,6 +72,8 @@
     &.gradient {
       .title__main {
         background: $gradient;
+        background-size: 200% 100%;
+        animation: textGradientAnim 5s ease infinite alternate;
         overflow: hidden;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -83,6 +85,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
+        }
+      }
+
+      @keyframes textGradientAnim {
+        0% {
+          background-position: 0 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0 50%;
         }
       }
     }

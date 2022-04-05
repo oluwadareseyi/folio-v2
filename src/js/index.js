@@ -133,6 +133,19 @@ export default class Home {
       });
     });
 
+    gsap.utils.toArray("[data-fade-in]").forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          scroller: "[data-scroll-container]",
+        },
+        duration: 1.5,
+        yPercent: 100,
+        opacity: 0,
+        ease: "power4.out",
+      });
+    });
+
     if (window.innerWidth <= 768) {
       gsap.utils.toArray(".home__projects__project").forEach((el) => {
         const text = el.querySelector(".title__main");
@@ -156,56 +169,18 @@ export default class Home {
           ease: "power1.out",
         },
         scrollTrigger: {
-          trigger: ".home__awards__top",
+          trigger: ".home__awards",
           scroller: "[data-scroll-container]",
         },
       });
-      awardsTl
-        .from(".awards-title.mobile span", {
-          duration: 1,
-          opacity: 0,
-          yPercent: 100,
-          stagger: {
-            amount: 0.2,
-          },
-        })
-        .from(
-          ".home__awards .awards-links",
-          {
-            duration: 0.7,
-            yPercent: 60,
-            opacity: 0,
-          },
-          "-=1"
-        );
-    } else {
-      const awardsTl = gsap.timeline({
-        defaults: {
-          ease: "power1.out",
-        },
-        scrollTrigger: {
-          trigger: ".home__awards__top",
-          scroller: "[data-scroll-container]",
+      awardsTl.from(".awards-title span", {
+        duration: 1,
+        opacity: 0,
+        yPercent: 100,
+        stagger: {
+          amount: 0.2,
         },
       });
-      awardsTl
-        .from(".awards-title.desktop", {
-          duration: 1,
-          opacity: 0,
-          yPercent: 100,
-          stagger: {
-            amount: 0.2,
-          },
-        })
-        .from(
-          ".home__awards .awards-links",
-          {
-            duration: 0.5,
-            yPercent: 100,
-            opacity: 0,
-          },
-          "-=1"
-        );
     }
   }
 

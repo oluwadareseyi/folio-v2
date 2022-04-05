@@ -348,6 +348,20 @@
 
   &__awards {
     @extend %padding-home;
+    @extend %links;
+
+    justify-content: space-between;
+    max-width: 113rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 9.6rem;
+    padding-bottom: 9.6rem;
+
+    @include media(">tablet") {
+      display: flex;
+      padding-top: 24rem;
+      padding-bottom: 24rem;
+    }
 
     &__top,
     &__bottom {
@@ -357,39 +371,101 @@
         display: flex;
       }
     }
-    .awards-title {
-      @extend %title-328;
-      color: $col-boulder;
-      letter-spacing: -0.05em;
-      line-height: 0.9;
 
-      &.mobile {
-        font-size: 99.5px;
-        margin-bottom: 1.6rem;
-        @include media(">phone") {
-          display: none;
-        }
-
-        span {
-          display: inline-block;
-        }
+    .awards {
+      &__title {
+        @extend %description-12;
+        color: $col-boulder;
+        margin-bottom: 24px;
       }
 
-      &.desktop {
-        @include media("<=phone") {
-          display: none;
-        }
+      &__item {
+        @extend %description-16;
+        padding: 16px 0;
+        border-top: 2px solid $col-boulder;
+        position: relative;
+        transition: color 0.2s;
+
+        // &::after {
+        //   background: $col-orange;
+        //   content: "";
+        //   display: block;
+        //   height: 100%;
+        //   left: 0;
+        //   position: absolute;
+        //   top: 0;
+        //   transform: scaleY(0);
+        //   transform-origin: top;
+        //   transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        //   width: 100%;
+        //   z-index: -1;
+        // }
+
+        // &:hover {
+        //   color: $col-black;
+
+        //   &::after {
+        //     transform: scaleY(1);
+        //     transform-origin: bottom;
+        //   }
+        // }
       }
     }
-    @extend %links;
 
-    p {
-      align-self: flex-end;
-      @extend %description-32;
-      max-width: 55.5rem;
+    &__stack {
+      margin-bottom: 9.6rem;
+    }
 
-      @include media(">phone") {
-        padding-bottom: 5.5rem;
+    &__left {
+      margin-bottom: 9.6rem;
+
+      @include media(">tablet") {
+        max-width: 55.5rem;
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+
+    &__right {
+      @include media(">tablet") {
+        max-width: 32.5rem;
+        width: 100%;
+      }
+    }
+
+    .home__content {
+      &__title {
+        @extend %description-12;
+        text-transform: uppercase;
+        color: $col-boulder;
+      }
+
+      &__desc {
+        @extend %description-16;
+        max-width: 95rem;
+        width: 100%;
+        @extend %links;
+
+        a {
+          text-transform: uppercase;
+        }
+
+        .contact-scroll {
+          color: $col-boulder;
+          transition: color 0.3s;
+          background: transparent;
+          border: 0;
+          padding: 0;
+          @extend %description-16;
+          font-weight: 500;
+          cursor: pointer;
+
+          @media (any-pointer: fine) {
+            &:hover {
+              color: $col-orange;
+            }
+          }
+        }
       }
     }
   }
@@ -408,16 +484,13 @@
       @extend %padding-home;
       margin: 0;
       margin-bottom: 6.4rem;
-      max-width: 44rem;
-      @include media(">tablet") {
+
+      @include media(">phone") {
+        max-width: 44rem;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
         padding: 0;
-      }
-
-      @include media("<=phone") {
-        max-width: 28.5rem;
       }
     }
 
