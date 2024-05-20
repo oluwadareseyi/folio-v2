@@ -173,7 +173,7 @@ export default class Home {
           scroller: "[data-scroll-container]",
         },
       });
-      awardsTl.from(".awards-title span", {
+      awardsTl.from(".awards__title span", {
         duration: 1,
         opacity: 0,
         yPercent: 100,
