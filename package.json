@@ -1,24 +1,22 @@
 {
   "name": "profile-rebuild",
-  "version": "1.0.0",
-  "main": "app.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "rm -rf ./public && rm -rf ./.cache && parcel src/index.html -d public -p 3000",
-    "build": "parcel build src/index.html -d dist --public-url ./"
+    "dev": "vite src --port 3000",
+    "build": "vite build src",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/runtime-corejs3": "^7.10.2",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.35.1"
+    "vite": "^5.2.9",
+    "sass": "^1.62.0"
   },
   "dependencies": {
     "gsap": "^3.7.0",
-    "locomotive-scroll": "^4.1.1",
-    "regenerator-runtime": "^0.13.7"
+    "locomotive-scroll": "^4.1.1"
   }
 }

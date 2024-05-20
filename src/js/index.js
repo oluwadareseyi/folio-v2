@@ -1,8 +1,8 @@
 import LocomotiveScroll from "locomotive-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import each from "lodash/each";
 import { copyText } from "./utils/index";
+import { mapEach } from "./utils/dom";
 // import Home from "./pages/home";
 
 const toContactButtons = document.querySelectorAll(".contact-scroll");
@@ -56,7 +56,7 @@ export default class Home {
   }
 
   homeActions() {
-    each(toContactButtons, (button) => {
+    mapEach(toContactButtons, (button) => {
       button.onclick = () => {
         this.locomotive.scrollTo(footer);
       };
