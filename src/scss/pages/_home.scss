@@ -678,15 +678,7 @@
 
       .time {
         position: relative;
-
-        &::before {
-          content: "";
-          position: absolute;
-          background: $col-black;
-          height: 100%;
-          left: 0;
-          width: 6px;
-        }
+        display: flex;
 
         @include media("<=tablet") {
           margin-bottom: 2.4rem;

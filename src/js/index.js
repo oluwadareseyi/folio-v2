@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { copyText } from "./utils/index";
 import { mapEach } from "./utils/dom";
 // import Home from "./pages/home";
+import Time from "./components/Time";
 
 const toContactButtons = document.querySelectorAll(".contact-scroll");
 const footer = document.getElementById("js-footer");
@@ -11,6 +12,7 @@ const scrollEl = document.querySelector("[data-scroll-container]");
 const emailButton = document.querySelector("button.email");
 const toCopyText = document.querySelector(".to-copy span");
 // const body = document.body;
+const time = new Time();
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -80,3 +80,13 @@ html.has-scroll-dragging {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
+
+.flash {
+  animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
