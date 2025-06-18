@@ -12,11 +12,11 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "vite": "^5.2.9",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "vite": "^5.2.9"
   },
   "dependencies": {
     "gsap": "^3.7.0",
-    "locomotive-scroll": "^4.1.1"
+    "loconative-scroll": "https://github.com/quentinhocde/loconative-scroll"
   }
 }

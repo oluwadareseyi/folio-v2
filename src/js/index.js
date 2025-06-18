@@ -1,4 +1,4 @@
-import LocomotiveScroll from "locomotive-scroll";
+import LoconativeScroll from "loconative-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { copyText } from "./utils/index";
@@ -16,7 +16,7 @@ const time = new Time();
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scroll = new LocomotiveScroll({
+const scroll = new LoconativeScroll({
   el: scrollEl,
   smooth: true,
   lerp: 0.06,
