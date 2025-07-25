@@ -6,7 +6,7 @@ const sets = [set1, set2];
 
 const buildProjectSection = (templateCheerio, set, setIndex) => {
   const projectsSection = templateCheerio(
-    `[data-projects-section-${setIndex}]`
+    `[data-projects-section-${setIndex + 1}]`
   );
 
   projectsSection.empty();
@@ -16,7 +16,7 @@ const buildProjectSection = (templateCheerio, set, setIndex) => {
     const lineDirection = isEven ? "left" : "right";
     const scrollSpeed = isEven ? 8 : -8;
     const scrollDirection = isEven ? "right" : "left";
-    const featured = setIndex === 1 && index === 0;
+    const featured = setIndex === 0 && index === 0;
 
     // Add line before project
     const lineBefore = `<span class="home__projects__line ${lineDirection}"><span></span></span>`;
@@ -89,7 +89,7 @@ const buildProjectSection = (templateCheerio, set, setIndex) => {
 
 const buildProjectsSection = async (templateCheerio) => {
   sets.forEach((set, index) => {
-    buildProjectSection(templateCheerio, set, index + 1);
+    buildProjectSection(templateCheerio, set, index);
   });
 };
 
