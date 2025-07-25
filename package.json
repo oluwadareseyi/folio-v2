@@ -6,6 +6,7 @@
   "scripts": {
     "predev": "node scripts/predev.js",
     "dev": "vite src --port 3000",
+    "prebuild": "node scripts/predev.js",
     "build": "vite build src",
     "preview": "vite preview"
   },
