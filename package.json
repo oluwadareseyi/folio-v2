@@ -2,9 +2,9 @@
   "name": "profile-rebuild",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "license": "MIT",
   "scripts": {
+    "predev": "node scripts/predev.js",
     "dev": "vite src --port 3000",
     "build": "vite build src",
     "preview": "vite preview"
@@ -12,6 +12,7 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
+    "cheerio": "^1.1.0",
     "sass": "^1.62.0",
     "vite": "^5.2.9"
   },

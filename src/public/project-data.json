@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Tac — GOOGLE FONTS COMMISSIONED TYPEFACE",
+    "role": "Art Direction / <br /> Creative Development",
+    "description": "Tac is a typeface designed for Google Fonts. It is a modern, geometric typeface with a strong presence.",
+    "link": "https://www.afrotype.com/tac"
+  },
+  {
+    "id": 2,
+    "title": "PITH AFRICA — CUSTOM E-COMM EXPERIENCE",
+    "role": "Art Direction / <br /> E-Commerce Development",
+    "description": "Pith Africa is a fashion brand with a tailored e-commerce platform designed for immersive shopping experiences.",
+    "link": "https://www.pithafrica.com/"
+  },
+  {
+    "id": 3,
+    "title": "STUDIO NULL — RADIO NULL REWIND 2022",
+    "role": "Art Direction / <br /> Creative Development",
+    "description": "A year-end editorial experience by Studio Null, blending design, music, and interactive storytelling.",
+    "link": "https://2022.madebynull.com/"
+  },
+  {
+    "id": 4,
+    "title": "GRP 256 — FOLIO FOR VISUAL DESIGNER",
+    "role": "3D Exploration / <br /> Creative Development",
+    "description": "GRP 256 is a 3D-driven digital portfolio designed for showcasing the works of visual designer Fayemi.",
+    "link": "https://fayemi.design/"
+  },
+  {
+    "id": 5,
+    "title": "TERMINAL DASH — WEB-BASED GAME",
+    "role": "GAME (WEB) / <br /> Creative Development",
+    "description": "Terminal Dash is a web-based game designed to test your typing skills and improve your speed.",
+    "link": "https://paystack.com/terminal/dash/"
+  },
+  {
+    "id": 6,
+    "title": "PAYSTACK TERMINAL — MORE THAN A POS",
+    "role": "UI Development / <br /> PRODUCT ENGINEERING",
+    "description": "Paystack Terminal is a POS system designed to streamline your business operations.",
+    "link": "https://deploy-preview-162--paystack-terminal.netlify.app/terminal/"
+  },
+  {
+    "id": 7,
+    "title": "KORTY EO — A FANSITE FOR KORTY",
+    "role": "ART DIRECTION / <br /> Creative Development",
+    "description": "Korty EO is a fansite for Korty, a Nigerian artist.",
+    "link": "https://kortyeo.madebynull.com/"
+  }
+]
